@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Memoji Game
+{% endblock %}
+
+{%block main%}
+<div class='header'>
+    <h1>Memoji Game</h1>
+</div>
+<main class='main'>
+    {% for emoji in emojis %}
+    <div id={{emoji.id}} class='square item'>
+        <div class='square-face front'></div>
+        <div class='square-face back'>{{emoji.content}}</div>
+    </div>
+    {%endfor%}
+
+</main>
+<div class='looseOrWinBlockWindow'>
+    <div class='modal looseOrWinWindow'>
+        <p class='looseOrWinText'></p>
+        <button class='playAgain'>Play again</button>
+    </div>
+
+</div>
+<footer class='timer'></footer>
+<script src="main.js"></script>
+{%endblock%}
